@@ -1,0 +1,271 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  position: absolute;   
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0,0,0,0); 
+}
+
+.nav-container {
+  margin: 0 auto;
+  padding: 22px 40px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem; 
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;          
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;  
+  padding: 10px 14px; 
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-links .rsvp-button {
+  border: 2px solid white;
+  border-radius: 6px;
+  padding: 8px 18px;   
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-links .rsvp-button:hover {
+  background: rgba(255,255,255,0.4);
+  color: #222;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.nav-links li a:hover{
+  text-shadow:  2px 2px 10px rgba(0,0,0,1);
+  
+}
+
+body {
+  font-family: "Georgia", serif; 
+  color: #333;
+  line-height: 1.5;
+  background: #3d1626;
+}
+
+/* Hero section with background image */
+.hero {
+  background-image: url("images/rings.jpg"); 
+  background-size: cover;        
+  background-position: center;  
+  background-repeat: no-repeat;
+  color: white;                 
+  text-align: center;
+  padding: 250px 20px;
+  min-height: 80vh;
+  position: relative;
+  
+}
+
+/* Optional: dark overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1; 
+}
+
+.hero-inner h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.hero-meta {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.hero-attire {
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+.hero-rsvp {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 20px 50px;           
+  font-size: 1.5rem;             
+  font-weight: bold;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.8);
+  border-radius: 12px;
+  text-decoration: none;
+  background: rgba(61, 22, 38, 0.15); 
+  backdrop-filter: blur(10px);        
+  transition: all 0.3s ease;
+}
+
+.hero-rsvp:hover {
+  background: rgba(255,255,255,0.4);
+  color: #222;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Story blocks (three columns) */
+.story-blocks {
+  display: flex;
+  gap: 24px;
+  padding: 40px 20px;
+  justify-content: center;
+  color: #fff
+}
+
+.story-block {
+  flex: 1 1 0;
+  max-width: 400px;
+  text-align: center;
+}
+
+.story-block img {
+  width: 100%;
+  height: 85%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.story-block h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.story-block p {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.story-block i{color: rgba(255,255,255,0.4);}
+
+
+
+/* Responsive */
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 767px) {
+
+  /* Navbar */
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0;
+  }
+
+  .navbar .logo {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+
+  .nav-links .rsvp-button {
+    margin-top: 8px;
+    padding: 10px 24px;
+    border-radius: 6px;
+  }
+
+  /* Hero section */
+  .hero {
+    padding: 118px 16px;
+    min-height: 35vh;
+    background-attachment: scroll; 
+    
+  }
+
+  .hero-inner h1, .hero-meta, .hero-attire, .hero-rsvp {
+    display: none;
+  }
+
+  
+
+ 
+
+  
+  /* Story section */
+  .story-blocks {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .story-block {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .story-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .story-block h2 {
+    font-size: 1.4rem;
+    margin-top: 12px;
+  }
+
+  .story-block p {
+    font-size: 1rem;
+    color: #eee;
+  }
+
+  /* General body text adjustments */
+  body {
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Optional footer tweaks (if you have one) */
+  footer, .site-footer {
+    font-size: 0.9rem;
+    padding: 16px 0;
+    text-align: center;
+  }
+}
+
+  
